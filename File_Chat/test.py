@@ -27,7 +27,7 @@ def ask_question(question, k=3):
     context = " ".join(retrieved_texts)
     return context
 
-# Example usage
-question = "tell me about praying"
+# Example usage 
+question = "tell me about praying" 
 context = ask_question(question)
 print("Retrieved Context:", context)
