@@ -5,7 +5,7 @@ from sentence_transformers import SentenceTransformer
 faiss_index = faiss.read_index("hadith_faiss_index.index")
 
 # Load associated texts
-with open("hadith_texts.txt", "r") as f:
+with open("hadith_data.csv", "r") as f:
     texts = f.readlines()
 texts = [text.strip() for text in texts]  # Remove newline characters
 
@@ -28,6 +28,6 @@ def ask_question(question, k=3):
     return context
 
 # Example usage 
-question = "tell me about praying" 
+question = "what is praying" 
 context = ask_question(question)
 print("Retrieved Context:", context)
