@@ -28,6 +28,6 @@ def ask_question(question, k=3):
     return context
 
 # Example usage 
-question = "what is praying" 
+question = "How to pray? " 
 context = ask_question(question)
 print("Retrieved Context:", context)
