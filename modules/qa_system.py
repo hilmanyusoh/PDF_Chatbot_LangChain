@@ -1,21 +1,18 @@
 import faiss
 import pickle
 from sentence_transformers import SentenceTransformer
-import torch
 
 class HadithQA:
     def __init__(self):
         # Load FAISS index
-        self.index = faiss.read_index("hadith_faiss_index/index.faiss")
+        self.index = faiss.read_index("/Users/hilmanyusoh/Desktop/PDF_Chatbot_LangChain/data/hadith_faiss_index/index.faiss")  # ตรวจสอบ path ให้ถูกต้อง
         
         # Load chunks
-        with open("hadith_chunks.pkl", "rb") as f:
+        with open("/Users/hilmanyusoh/Desktop/PDF_Chatbot_LangChain/data/hadith_chunks.pkl", "rb") as f:
             self.chunks = pickle.load(f)
 
-        # Select device
-        device = "cuda" if torch.cuda.is_available() else "cpu"
         # Load embedding model
-        self.embedding_model = SentenceTransformer("BAAI/bge-small-en-v1.5", device=device)
+        self.embedding_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 
     def ask_question(self, question, k=3):
         q_emb = self.embedding_model.encode([question], normalize_embeddings=True)
