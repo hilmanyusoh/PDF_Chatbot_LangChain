@@ -2,7 +2,6 @@ import pandas as pd
 import logging
 import pickle
 import torch
-
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 from langchain_community.vectorstores import FAISS
@@ -11,7 +10,7 @@ from langchain.docstore.document import Document
 logging.basicConfig(level=logging.INFO)
 
 def build_index(
-    csv_path="/Users/hilmanyusoh/Desktop/PDF_Chatbot_LangChain/collect_data/hadith_data.csv",
+    csv_path="/Users/hilmanyusoh/Desktop/PDF_Chatbot_LangChain/data/hadith_data.csv",
     index_path="hadith_faiss_index",
     chunk_path="hadith_chunks.pkl"
 ):

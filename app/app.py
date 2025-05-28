@@ -1,5 +1,7 @@
 import streamlit as st
-from modules.qa_system import HadithQA
+import sys
+import os
+from qa_system import HadithQA 
 
 # โหลด QA system
 @st.cache_resource

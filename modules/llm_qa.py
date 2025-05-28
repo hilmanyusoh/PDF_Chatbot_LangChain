@@ -6,8 +6,8 @@ from sentence_transformers import SentenceTransformer
 class SimpleHadithQA:
     def __init__(self):
         # โหลด FAISS index และ chunks
-        self.index = faiss.read_index("/Users/hilmanyusoh/Desktop/PDF_Chatbot_LangChain/collect_data/hadith_faiss_index/index.faiss")
-        with open("/Users/hilmanyusoh/Desktop/PDF_Chatbot_LangChain/collect_data/hadith_chunks.pkl", "rb") as f:
+        self.index = faiss.read_index("/Users/hilmanyusoh/Desktop/PDF_Chatbot_LangChain/data/hadith_faiss_index/index.faiss")
+        with open("/Users/hilmanyusoh/Desktop/PDF_Chatbot_LangChain/data/hadith_chunks.pkl", "rb") as f:
             self.chunks = pickle.load(f)
         self.embedding_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
 
